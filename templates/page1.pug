@@ -1,0 +1,24 @@
+extends layout.pug
+
+block content
+ #MyId C'est un Id
+ .Classe C'est une classe
+ input(type='checkbox', checked) 
+ p Une checkbox
+ form(#form action="action.php" method="post")
+    input(type="text" name="name" id="name")
+    button(type="submit") send
+
+ h2 loop for
+  ul
+    - for (var i = 0; i < 4; i++)
+      li item #{i}  
+ h2 loop each
+    - list = ['bob', 'max', 'toto']
+ each item in list
+  li= item  
+ h2 loop while
+    - var n = 0;
+    ul
+     while n < 4
+      li= n++ 
